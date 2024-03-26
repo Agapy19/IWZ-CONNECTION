@@ -222,9 +222,46 @@ main .container .container-left .container-left__profile {
     border-top-left-radius: var(--card-border-radius);
     overflow: hidden;
 }
-.container-left .btn{
+
+.container-left .btn {
     margin: 1rem;
     width: 100%;
     text-align: center;
     padding: 1rem 0;
+}
+
+/* Container Notification */
+.container-left .container-notification {
+    position: absolute;
+    top: 0;
+    left: 110%;
+    width: 30rem;
+    background: var(--white-color);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-paddind);
+    box-shadow: 0 0 2rem hsl(var(--primary-color), 75%, 60%, 25%);
+    z-index: 8;
+    display: none;
+}
+
+.container-left .container-notification::before {
+    content: "";
+    width: 1.2rem;
+    height: 1.2rem;
+    display: block;
+    background: var(--white-color);
+    position: absolute;
+    left: -0.6rem;
+    transform: rotate(45deg);
+}
+
+.container-left .container-notification>div {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container-left .container-notification>small {
+    display: block;
 }
