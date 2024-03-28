@@ -289,7 +289,8 @@ main .container .container-left .container-left__profile {
     position: relative;
     overflow: hidden;
 }
-.container-timeline .stories .story::before{
+
+.container-timeline .stories .story::before {
     content: "";
     display: block;
     width: 100%;
@@ -298,40 +299,43 @@ main .container .container-left .container-left__profile {
     position: absolute;
     bottom: 0;
 }
-.container-timeline .stories .story .username{
-z-index: 2;
+
+.container-timeline .stories .story .username {
+    z-index: 2;
 }
-.container-timeline .stories .story:nth-child(1){
-    background:  url()
-    no-repeat center center/cover;
+
+.container-timeline .stories .story:nth-child(1) {
+    background: url('Images/aga.jpeg') no-repeat center center/cover;
 }
-.container-timeline .stories .story:nth-child(2){
-    background:  url()
-    no-repeat center center/cover;
+
+.container-timeline .stories .story:nth-child(2) {
+    background: url('Images/lisestory.png') no-repeat center center/cover;
 }
-.container-timeline .stories .story:nth-child(3){
-    background:  url()
-    no-repeat center center/cover;
+
+.container-timeline .stories .story:nth-child(3) {
+    background: url('Images/glodystory.png') no-repeat center center/cover;
 }
-.container-timeline .stories .story:nth-child(4){
-    background:  url()
-    no-repeat center center/cover;
+
+.container-timeline .stories .story:nth-child(4) {
+    background: url('Images/Ket.jpeg') no-repeat center center/cover;
 }
-.container-timeline .stories .story:nth-child(5){
-    background:  url()
-    no-repeat center center/cover;
+
+.container-timeline .stories .story:nth-child(5) {
+    background: url('Images/ayastory.png') no-repeat center center/cover;
 }
-.container-timeline .stories .story:nth-child(6){
-    background:  url()
-    no-repeat center center/cover;
+
+.container-timeline .stories .story:nth-child(6) {
+    background: url('Images/dadjustory.png') no-repeat center center/cover;
 }
-.container-timeline .story .profile{
+
+.container-timeline .story .profile {
     width: 2rem;
     height: 2rem;
     align-self: start;
     border: 3px solid var(--primary-color);
 }
-.container-timeline .create-post{
+
+.container-timeline .create-post {
     width: 100%;
     display: flex;
     align-items: center;
@@ -341,11 +345,64 @@ z-index: 2;
     padding: 0.4rem var(--card-paddind);
     border-radius: var(--border-radius);
 }
-.container-timeline .create-post input [type = "text"] {
+
+.container-timeline .create-post input [type="text"] {
     justify-self: start;
     width: 100%;
     padding-left: 1rem;
     background: transparent;
     color: var(--dark-color);
     margin-right: 1rem;
+}
+
+/* FIN STORY */
+
+.container-timeline .feeds .feed {
+    background: var(--white-color);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-paddind);
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+.container-timeline .feeds .feed .feed-head{
+    display: flex;
+    justify-content: space-between;
+
+}
+.container-timeline .feed .head-user{
+    display: flex;
+    gap: 1rem;
+}
+.container-timeline .feed .profile{
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    margin: 0.7rem 0;
+}
+.container-timeline .feed .btn-action{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    margin: 0.6rem;
+}
+.container-timeline .liked{
+display: flex;
+}
+.container-timeline .liked span{
+    width: 1.4rem;
+    height: 1.4rem;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--white-color);
+    margin-left: -0.6rem;
+
+}
+.container-timeline .liked span:first-child{
+   margin: 0;
+    
+}
+.container-timeline .liked p{
+    margin-left: 0.5rem;
 }
