@@ -96,18 +96,20 @@ nav .container {
     justify-content: space-between;
 }
 
-nav .bar-search {
+.bar-search {
     background: var(--light-color);
     border-radius: var(--border-radius);
     padding: var(--padding-search);
 }
 
-nav .bar-search input[type="search"] {
+.bar-search input[type="search"] {
     background: transparent;
     width: 30vw;
     margin-left: 1rem;
     font-size: 0.9rem;
     color: var(--dark-color);
+    border: none;
+    outline: none;
 }
 
 nav .bar-search input[type="search"]::placeholder {
@@ -365,31 +367,37 @@ main .container .container-left .container-left__profile {
     font-size: 0.85rem;
     line-height: 1.5;
 }
-.container-timeline .feeds .feed .feed-head{
+
+.container-timeline .feeds .feed .feed-head {
     display: flex;
     justify-content: space-between;
 
 }
-.container-timeline .feed .head-user{
+
+.container-timeline .feed .head-user {
     display: flex;
     gap: 1rem;
 }
-.container-timeline .feed .profile{
+
+.container-timeline .feed .profile {
     border-radius: var(--card-border-radius);
     overflow: hidden;
     margin: 0.7rem 0;
 }
-.container-timeline .feed .btn-action{
+
+.container-timeline .feed .btn-action {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.4rem;
     margin: 0.6rem;
 }
-.container-timeline .liked{
-display: flex;
+
+.container-timeline .liked {
+    display: flex;
 }
-.container-timeline .liked span{
+
+.container-timeline .liked span {
     width: 1.4rem;
     height: 1.4rem;
     display: block;
@@ -399,10 +407,128 @@ display: flex;
     margin-left: -0.6rem;
 
 }
-.container-timeline .liked span:first-child{
-   margin: 0;
-    
+
+.container-timeline .liked span:first-child {
+    margin: 0;
+
 }
-.container-timeline .liked p{
+
+.container-timeline .liked p {
     margin-left: 0.5rem;
+}
+
+/* Rigth */
+main .container .container-rigth {
+    height: max-content;
+    position: sticky;
+    top: var(--sticky-top-right);
+    bottom: 0;
+}
+
+.container-rigth .rigth-messages {
+    background: var(--white-color);
+    border: var(--card-border-radius);
+    padding: var(--card-paddind);
+}
+
+.container-rigth .rigth-messages .messages-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.container-rigth .rigth-messages i {
+    font-size: 1.4rem;
+}
+
+.container-rigth .rigth-messages .bar-search {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.container-rigth .rigth-messages .messages-category {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.container-rigth .rigth-messages .messages-category h6 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid var(--light-color);
+    padding-bottom: 0.4rem;
+    font-size: 0.84rem;
+}
+
+.container-rigth .rigth-messages .messages-category .active {
+    border-color: var(--primary-color);
+}
+.container-rigth .rigth-messages .message-request{
+    color: var(--primary-color);
+}
+
+.container-rigth .rigth-messages .messages-message {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: start;
+}
+
+.container-rigth .rigth-messages .messages-message .profile {
+    position: relative;
+    overflow: visible;
+
+}
+
+.container-rigth .rigth-messages .messages-message .profile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 60%;
+
+}
+
+
+
+.container-rigth .rigth-messages .messages-message:last-child {
+    margin: 0;
+
+}
+
+.container-rigth .rigth-messages .messages-message p {
+    font-size: 0.8rem;
+}
+
+.container-rigth .rigth-messages .messages-message .profile .active {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 40%;
+    border: 4px solid var(--white-color);
+    background: var(--green-color);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.container-rigth .container-friend{
+    margin-top: 1rem;
+}
+.container-rigth .container-friend h4{
+    color: var(--gray-color);
+    margin: 1rem 0;
+}
+.container-rigth .friend-request{
+    background: var(--white-color);
+    padding: var(--card-paddind);
+    border-radius: var(--card-border-radius);
+    margin-bottom: 0.7rem;
+}
+.container-rigth .friend-request .request-info{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.container-rigth .friend-request .action{
+    display: flex;
+    gap: 1rem;
 }
