@@ -464,7 +464,8 @@ main .container .container-rigth {
 .container-rigth .rigth-messages .messages-category .active {
     border-color: var(--primary-color);
 }
-.container-rigth .rigth-messages .message-request{
+
+.container-rigth .rigth-messages .message-request {
     color: var(--primary-color);
 }
 
@@ -510,25 +511,178 @@ main .container .container-rigth {
     right: 0;
 }
 
-.container-rigth .container-friend{
+.container-rigth .container-friend {
     margin-top: 1rem;
 }
-.container-rigth .container-friend h4{
+
+.container-rigth .container-friend h4 {
     color: var(--gray-color);
     margin: 1rem 0;
 }
-.container-rigth .friend-request{
+
+.container-rigth .friend-request {
     background: var(--white-color);
     padding: var(--card-paddind);
     border-radius: var(--card-border-radius);
     margin-bottom: 0.7rem;
 }
-.container-rigth .friend-request .request-info{
+
+.container-rigth .friend-request .request-info {
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
 }
-.container-rigth .friend-request .action{
+
+.container-rigth .friend-request .action {
     display: flex;
     gap: 1rem;
+}
+
+/* customize */
+
+.container-customize {
+    background: rgba(255, 255, 255, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    /* display: none; */
+}
+
+.container-customize .customize-card {
+    background: var(--white-color);
+    padding: 2rem;
+    border-radius: var(--card-border-radius);
+    width: 50%;
+}
+.container-customize .customize-card p{
+    margin-top: 1rem;
+}
+/* font-sie */
+.container-customize .card-font {
+    margin-top: 5rem;
+}
+
+.container-customize .card-font > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--light-color);
+    padding: var(--padding-search);
+    border-radius: var(--border-radius);
+}
+
+.container-customize .font-size {
+    background: var(--secondary-color);
+    height: 0.3rem;
+    width: 100%;
+    margin: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-customize .font-size span {
+    width: 1rem;
+    height: 1rem;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.container-customize .font-size span.active {
+    background: var(--primary-color);
+}
+
+/* color */
+.container-customize .card-color {
+    margin-top: 2rem;
+}
+
+.container-customize .color {
+    background: var(--light-color);
+    padding: var(--padding-search);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container-customize .color span {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.container-customize .color span:nth-child(1){
+    background-color: var(--primary-color);
+}
+.container-customize .color span:nth-child(2){
+    background-color: hsl(252, 75%, 60%);
+}
+.container-customize .color span:nth-child(3){
+    background-color: var(--green-color);
+}
+.container-customize .color span:nth-child(4){
+    background-color: hsl(202, 75%, 60%);
+}
+.container-customize .color span:nth-child(5){
+    background-color: var(--secondary-color);
+}
+.container-customize .color span:nth-child(6){
+    background-color: hsl(152, 75%, 60%);
+}
+.container-customize .color span:nth-child(7){
+    background-color: hsl(16, 75%, 50%);
+}
+.container-customize .color span{
+    border: 5px solid white;
+}
+
+/* thème */
+.container-customize .card-background{
+margin-top: 2rem;
+}
+.container-customize .background{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.container-customize .background > div{
+    display: flex;
+    align-items: center;
+    padding: var(--card-paddind);
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+.container-customize .background > div.active{
+border: 1px solid var(--primary-color)I;
+}
+.container-customize .background .theme1{
+    background: var(--light-color);
+    color: black;
+}
+.container-customize .background .theme2{
+    background: var(--black-color);
+    color: var(--white-color);
+}
+.container-customize .background .theme3{
+    background: var(--dark-color);
+    color: white;
+}
+.container-customize .background > div span{
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--gray-color);
+    border-radius: 50%;
+    margin-right: 1rem;
 }
