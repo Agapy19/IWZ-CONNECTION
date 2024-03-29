@@ -258,7 +258,7 @@ main .container .container-left .container-left__profile {
 }
 
 .container-left .container-notification>div {
-    display: flex;
+    display: grid;
     align-items: start;
     gap: 1rem;
     margin-bottom: 1rem;
