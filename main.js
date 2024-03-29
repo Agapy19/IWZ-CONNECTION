@@ -8,7 +8,7 @@ const message = rigthMessages.querySelectorAll('.messages-message');
 const messageSeach = document.querySelector('#message-seach');
 
 // thème
-const background = document.querySelector('#background');
+const theme = document.querySelector('#theme');
 const containerCustomize = document.querySelector('.container-customize');
 
 const changeActiveMenu = () => {
@@ -63,4 +63,5 @@ const openContainerCustomize = () =>{
     containerCustomize.style.display = 'grid';
 }
 
-background.addEventListener('click', openContainerCustomize);
+theme.addEventListener('click', openContainerCustomize
+);

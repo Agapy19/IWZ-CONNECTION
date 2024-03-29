@@ -3,7 +3,7 @@
     --light-color: #F5F5F5;
     --gray-color: #CCCCCC;
     --primary-color: #E4405F;
-    --secondary-color: #FFFF99;
+    --secondary-color: #f56781be;
     --green-color: hsl(120, 95%, 65%);
     --orange-color: hsl(0, 95%, 65%);
     --dark-color: hsl(252, 30%, 17%);
@@ -551,7 +551,7 @@ main .container .container-rigth {
     text-align: center;
     display: grid;
     place-items: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
     display: none;
 }
 
