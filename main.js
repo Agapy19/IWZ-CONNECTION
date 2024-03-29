@@ -7,6 +7,10 @@ const rigthMessages = document.querySelector('.rigth-messages');
 const message = rigthMessages.querySelectorAll('.messages-message');
 const messageSeach = document.querySelector('#message-seach');
 
+// thème
+const background = document.querySelector('#background');
+const containerCustomize = document.querySelector('.container-customize');
+
 const changeActiveMenu = () => {
     sideBarMenu.forEach(item => {
         item.classList.remove('active');
@@ -53,3 +57,10 @@ message.addEventListener('click', () => {
         messages.style.boxShadow = 'none'
     }, 2000);
 })
+
+// thème
+const openContainerCustomize = () =>{
+    containerCustomize.style.display = 'grid';
+}
+
+background.addEventListener('click', openContainerCustomize);

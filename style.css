@@ -560,6 +560,7 @@ main .container .container-rigth {
     padding: 2rem;
     border-radius: var(--card-border-radius);
     width: 50%;
+    box-shadow: 0 0 1rem var(--primary-color);
 }
 
 .container-customize .customize-card p {
@@ -733,6 +734,9 @@ main .container .container-rigth {
     .container-left .btn {
         display: none;
     }
+    .container-customize .customize-card{
+        width: 80vw;
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -775,6 +779,9 @@ main .container .container-rigth {
 
     main .container .container-rigth {
         display: none;
+    }
+    .container-customize .customize-card{
+        width: 92vw;
     }
 
 }
