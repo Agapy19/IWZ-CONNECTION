@@ -4,33 +4,49 @@ const sideBarMenu = document.querySelectorAll('.side-bar__menu');
 // message
 const messages = document.querySelector('#message');
 const rigthMessages = document.querySelector('.rigth-messages');
-const message = messages.querySelectorAll('.messages-message');
+const message = rigthMessages.querySelectorAll('.messages-message');
 const messageSeach = document.querySelector('#message-seach');
 
-const changeActiveMenu = () =>{
-    sideBarMenu.forEach(item =>{
+const changeActiveMenu = () => {
+    sideBarMenu.forEach(item => {
         item.classList.remove('active');
     })
 }
 
-sideBarMenu.forEach(item =>{
-    item.addEventListener('click', () =>{
+sideBarMenu.forEach(item => {
+    item.addEventListener('click', () => {
         changeActiveMenu();
         item.classList.add('active');
         if (item.id != 'notifications') {
             document.querySelector('.container-notification').
-            style.display = 'none';
+                style.display = 'none';
         }
-        else{
+        else {
             document.querySelector('.container-notification').
-            style.display = 'block';
+                style.display = 'block';
             document.querySelector('#notifications .notification-count')
-            .style.display = 'none';
+                .style.display = 'none';
         }
     })
 })
+// messages
+const search = () =>{
+    const valeur = messageSeach.value.toLowerCase();
+    message.forEach(user =>{
+        let name = user.querySelector('h5').textContent.toLowerCase();
+        if (name.indexOf(valeur) != -1)  {
+            user.style.display = 'flex';
+        }
+        else{
+            user.style.display = 'none';
 
-message.addEventListener('click', () =>{
+        }
+    })
+}
+
+messageSeach.addEventListener('keyup', search);
+
+message.addEventListener('click', () => {
     rigthMessages.style.boxShadow = '0 0 1rem var( --primary-color)';
     messages.querySelector('.notification-count').style.display = 'none';
     setTimeout(() => {
