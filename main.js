@@ -11,7 +11,12 @@ const messageSeach = document.querySelector('#message-seach');
 const theme = document.querySelector('#themes');
 const containerCustomize = document.querySelector('.container-customize');
 const fontSizes = document.querySelectorAll('.font-size span');
-var root = document.querySelector(':root')
+var root = document.querySelector(':root');
+const colors = document.querySelectorAll('.color span');
+const theme1 = document.querySelector('.theme1');
+const theme2 = document.querySelector('.theme2');
+const theme3 = document.querySelector('.theme3');
+
 
 
 const changeActiveMenu = () => {
@@ -62,19 +67,33 @@ const openTheme = () => {
 
 // fermer
 const closeTheme = (e) => {
-  if (e.target.classList.contains('container-customize')) {
-    containerCustomize.style.display = 'none';
-  } 
+    if (e.target.classList.contains('container-customize')) {
+        containerCustomize.style.display = 'none';
+    }
 }
 containerCustomize.addEventListener('click', closeTheme);
 theme.addEventListener('click', openTheme);
 
 
+
+
 // fontSize
+const deleteSizeSelector = () => {
+
+    fontSizes.forEach(size => {
+        size.classList.remove('active');
+
+    })
+
+}
 
 fontSizes.forEach(size => {
-    let fontSize;
     size.addEventListener('click', () => {
+        deleteSizeSelector();
+        let fontSize;
+        size.classList.toggle('active');
+
+
         if (size.classList.contains('font-size1')) {
             fontSize = "10px";
             root.style.setProperty('----sticky-top-left', '5.4rem');
@@ -105,13 +124,13 @@ fontSizes.forEach(size => {
 
         }
         else if (size.classList.contains('font-size6')) {
-            fontSize = "25px";
+            fontSize = "23px";
             root.style.setProperty('----sticky-top-left', '-13rem');
             root.style.setProperty('----sticky-top-right', '-36rem');
 
         }
         else if (size.classList.contains('font-size7')) {
-            fontSize = "28px";
+            fontSize = "24px";
             root.style.setProperty('----sticky-top-left', '-3rem');
             root.style.setProperty('----sticky-top-right', '-18rem');
 
@@ -121,7 +140,91 @@ fontSizes.forEach(size => {
 
 })
 
+const deleteColorSelector = () => {
+    colors.forEach(colorActive => {
+        colorActive.classList.remove('active');
+    })
+}
 
+// couleurs
+colors.forEach(color => {
+    let primary;
+    deleteColorSelector();
+    color.addEventListener('click', () => {
+        if (color.classList.contains('color-1')) {
+            primary = '#E4405F';
+            root.style.setProperty('--primary-color', '#E4405F');
+        } else if (color.classList.contains('color-2')) {
+            primary = 'hsl(252, 75%, 60%)'
+            root.style.setProperty('--move-color', 'hsl(252, 75%, 60%)');
+        } else if (color.classList.contains('color-3')) {
+            primary = 'hsl(120, 95%, 65%)';
+            root.style.setProperty('--green-color', 'hsl(120, 95%, 65%)');
+        } else if (color.classList.contains('color-4')) {
+            primary = 'hsl(202, 75%, 60%)';
+            root.style.setProperty('--blue-color', 'hsl(202, 75%, 60%)');
+        } else if (color.classList.contains('color-5')) {
+            primary = '#f56781be';
+            root.style.setProperty('--secondary-color', '#f56781be');
+        } else if (color.classList.contains('color-6')) {
+            primary = 'hsl(152, 75%, 60%)';
+            root.style.setProperty('--green-clair-color', 'hsl(152, 75%, 60%)');
+        } else if (color.classList.contains('color-7')) {
+            primary = 'hsl(16, 75%, 50%))';
+            root.style.setProperty('--orangee-color', 'hsl(16, 75%, 50%)');
+        }
+
+        color.classList.add('active');
+        document.querySelector('html').style.color = primary;
+
+    });
+});
+
+// background
+let darkColorLight;
+let lightColorHue;
+let whiteColorHue;
+
+const changeTheme = () => {
+    root.style.setProperty('--light-color-hue', lightColorHue);
+    root.style.setProperty('--white-color-hue', whiteColorHue);
+    root.style.setProperty('--dark-color-light', darkColorLight);
+
+
+}
+theme1.addEventListener('click', () =>{
+
+
+    theme1.classList.add('active');
+    theme2.classList.remove('active');
+    theme3.classList.remove('active');
+    window.location.reload();
+
+});
+
+theme2.addEventListener('click', () =>{
+    darkColorLight = '95%';
+    whiteColorHue = '20%';
+    lightColorHue = '15%';
+
+    theme2.classList.add('active');
+    theme1.classList.remove('active');
+    theme3.classList.remove('active');
+    changeTheme();
+
+});
+
+theme3.addEventListener('click', () =>{
+    darkColorLight = '95%';
+    whiteColorHue = '10%';
+    lightColorHue = '0%';
+
+    theme3.classList.add('active');
+    theme1.classList.remove('active');
+    theme2.classList.remove('active');
+    changeTheme();
+
+});
 
 // messages
 const search = () => {

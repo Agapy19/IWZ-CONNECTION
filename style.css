@@ -1,13 +1,22 @@
 :root {
-    --white-color: hsl(252, 30%, 100%);
-    --light-color: #F5F5F5;
+    --dark-color-light: 17%;
+    --light-color-hue: 95%;
+    --white-color-hue: 100%;
+
+
+    --white-color: hsl(252, 30%, var(--white-color-hue));
+    --light-color: hsl(252, 30%, var(--light-color-hue));
     --gray-color: #CCCCCC;
     --primary-color: #E4405F;
     --secondary-color: #f56781be;
     --green-color: hsl(120, 95%, 65%);
     --orange-color: hsl(0, 95%, 65%);
-    --dark-color: hsl(252, 30%, 17%);
+    --dark-color: hsl(252, 30%, var(--dark-color-light));
     --black-color: hsl(252, 30%, 10%);
+    --blue-color: hsl(202, 75%, 60%);
+    --green-clair-color: hsl(152, 75%, 60%);
+    --orangee-color: hsl(16, 75%, 50%);
+    --move-color: hsl(252, 75%, 60%);
 
     --border-radius: 2rem;
     --padding-btn: 0.6rem 2rem;
@@ -355,6 +364,8 @@ main .container .container-left .container-left__profile {
     background: transparent;
     color: var(--dark-color);
     margin-right: 1rem;
+    border: none;
+    outline: none;
 }
 
 /* FIN STORY */
@@ -629,7 +640,7 @@ main .container .container-rigth {
 }
 
 .container-customize .color span:nth-child(2) {
-    background-color: hsl(252, 75%, 60%);
+    background-color: var(--move-color);
 }
 
 .container-customize .color span:nth-child(3) {
@@ -637,7 +648,7 @@ main .container .container-rigth {
 }
 
 .container-customize .color span:nth-child(4) {
-    background-color: hsl(202, 75%, 60%);
+    background-color: var(--blue-color);
 }
 
 .container-customize .color span:nth-child(5) {
@@ -645,14 +656,14 @@ main .container .container-rigth {
 }
 
 .container-customize .color span:nth-child(6) {
-    background-color: hsl(152, 75%, 60%);
+    background-color: var(--green-clair-color);
 }
 
 .container-customize .color span:nth-child(7) {
-    background-color: hsl(16, 75%, 50%);
+    background-color: var(--orangee-color);
 }
 
-.container-customize .color span {
+.container-customize .color span.active {
     border: 5px solid white;
 }
 
@@ -734,7 +745,8 @@ main .container .container-rigth {
     .container-left .btn {
         display: none;
     }
-    .container-customize .customize-card{
+
+    .container-customize .customize-card {
         width: 80vw;
     }
 }
@@ -780,7 +792,8 @@ main .container .container-rigth {
     main .container .container-rigth {
         display: none;
     }
-    .container-customize .customize-card{
+
+    .container-customize .customize-card {
         width: 92vw;
     }
 
