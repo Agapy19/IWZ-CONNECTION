@@ -557,7 +557,7 @@ main .container .container-rigth {
 
 .container-customize .customize-card {
     background: var(--white-color);
-    padding: 2rem;
+    padding: 3rem;
     border-radius: var(--card-border-radius);
     width: 50%;
     box-shadow: 0 0 1rem var(--primary-color);

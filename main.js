@@ -8,8 +8,11 @@ const message = rigthMessages.querySelectorAll('.messages-message');
 const messageSeach = document.querySelector('#message-seach');
 
 // thème
-const theme = document.querySelector('#theme');
+const theme = document.querySelector('#themes');
 const containerCustomize = document.querySelector('.container-customize');
+const fontSizes = document.querySelectorAll('.font-size span');
+var root = document.querySelector(':root')
+
 
 const changeActiveMenu = () => {
     sideBarMenu.forEach(item => {
@@ -34,14 +37,101 @@ sideBarMenu.forEach(item => {
     })
 })
 // messages
-const search = () =>{
+sideBarMenu.forEach(item => {
+    item.addEventListener('click', () => {
+        rigthMessages.style.boxShadow = '0 0 1rem var( --primary-color)'
+        item.classList.add('active');
+        if (item.id != 'message') {
+            document.querySelector('.rigth-messages').
+                style.display = 'none';
+        }
+        else {
+            document.querySelector('.rigth-messages').
+                style.display = 'block';
+            document.querySelector('#message .notification-count')
+                .style.display = 'none';
+        }
+    })
+})
+
+// thème
+// ouvrire le theme
+const openTheme = () => {
+    containerCustomize.style.display = "grid";
+}
+
+// fermer
+const closeTheme = (e) => {
+  if (e.target.classList.contains('container-customize')) {
+    containerCustomize.style.display = 'none';
+  } 
+}
+containerCustomize.addEventListener('click', closeTheme);
+theme.addEventListener('click', openTheme);
+
+
+// fontSize
+
+fontSizes.forEach(size => {
+    let fontSize;
+    size.addEventListener('click', () => {
+        if (size.classList.contains('font-size1')) {
+            fontSize = "10px";
+            root.style.setProperty('----sticky-top-left', '5.4rem');
+            root.style.setProperty('----sticky-top-right', '5.4rem');
+
+        }
+        else if (size.classList.contains('font-size2')) {
+            fontSize = "13px";
+            root.style.setProperty('----sticky-top-left', '5.4rem');
+            root.style.setProperty('----sticky-top-right', '-7rem');
+        }
+        else if (size.classList.contains('font-size3')) {
+            fontSize = "16px";
+            root.style.setProperty('----sticky-top-left', '-2rem');
+            root.style.setProperty('----sticky-top-right', '-17rem');
+
+        }
+        else if (size.classList.contains('font-size4')) {
+            fontSize = "19px";
+            root.style.setProperty('----sticky-top-left', '-5rem');
+            root.style.setProperty('----sticky-top-right', '-25rem');
+
+        }
+        else if (size.classList.contains('font-size5')) {
+            fontSize = "22px";
+            root.style.setProperty('----sticky-top-left', '-12rem');
+            root.style.setProperty('----sticky-top-right', '-35rem');
+
+        }
+        else if (size.classList.contains('font-size6')) {
+            fontSize = "25px";
+            root.style.setProperty('----sticky-top-left', '-13rem');
+            root.style.setProperty('----sticky-top-right', '-36rem');
+
+        }
+        else if (size.classList.contains('font-size7')) {
+            fontSize = "28px";
+            root.style.setProperty('----sticky-top-left', '-3rem');
+            root.style.setProperty('----sticky-top-right', '-18rem');
+
+        }
+        document.querySelector('html').style.fontSize = fontSize;
+    });
+
+})
+
+
+
+// messages
+const search = () => {
     const valeur = messageSeach.value.toLowerCase();
-    message.forEach(user =>{
+    message.forEach(user => {
         let name = user.querySelector('h5').textContent.toLowerCase();
-        if (name.indexOf(valeur) != -1)  {
+        if (name.indexOf(valeur) != -1) {
             user.style.display = 'flex';
         }
-        else{
+        else {
             user.style.display = 'none';
 
         }
@@ -58,10 +148,4 @@ message.addEventListener('click', () => {
     }, 2000);
 })
 
-// thème
-const openContainerCustomize = () =>{
-    containerCustomize.style.display = 'grid';
-}
 
-theme.addEventListener('click', openContainerCustomize
-);
