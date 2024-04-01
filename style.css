@@ -562,7 +562,7 @@ main .container .container-rigth {
     text-align: center;
     display: grid;
     place-items: center;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     display: none;
 }
 
@@ -751,16 +751,26 @@ main .container .container-rigth {
     }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 700px) {
+    main .container {
+        display: grid;
+        grid-template-columns: 0vw auto 4vw;
+        gap: 0;
+        position: relative;
+    }
+
     nav .bar-search {
         display: none;
 
     }
-
-    main .container {
-        grid-template-columns: 0 auto 5rem;
-        gap: 0;
+    .creation label{
+        display: none;
     }
+
+    /* .container-timeline .feeds .feed {
+        padding: 0.5rem;
+        width: 60%;
+    } */
 
     main .container .container-left {
         grid-column: 3/4;
@@ -771,7 +781,7 @@ main .container .container-rigth {
 
     .container-left .container-notification {
         position: absolute;
-        left: -20rem;
+        left: -15rem;
         width: 20rem;
     }
 
@@ -789,12 +799,85 @@ main .container .container-rigth {
         grid-column: 1/3;
     }
 
-    main .container .container-rigth {
+    /* main .container .container-rigth {
         display: none;
-    }
+    } */
 
     .container-customize .customize-card {
         width: 92vw;
     }
 
+    .container-left .side-bar i {
+        font-size: 1.1rem;
+
+    }
+
+    .container-left .side-bar i .notification-count {
+
+        font-size: 0.2rem;
+
+    }
+    
+
+    .container-left .side-bar h3 {
+        font-size: 0.8rem;
+    }
+    .container-timeline .stories .story:nth-child(1) {
+        background: url('Images/aga.jpeg') no-repeat center center/cover;
+    }
+    
+    .container-timeline .stories .story:nth-child(2) {
+        background: url('Images/lisestory.png') no-repeat center center/cover;
+    }
+    
+    .container-timeline .stories .story:nth-child(3) {
+        background: url('Images/glodystory.png') no-repeat center center/cover;
+    }
+    
+    .container-timeline .stories .story:nth-child(4) {
+       display: none;
+    }
+    
+    .container-timeline .stories .story:nth-child(5) {
+        display: none;
+    }
+    
+    .container-timeline .stories .story:nth-child(6) {
+        display: none;
+    }
+
+    .container-rigth .rigth-messages {
+        position: absolute;
+        left: -20rem;
+        width: 20rem;
+        top: 10rem;
+    }
+    
+   .container-friend{
+    display: none;
+   }
+
+   .container-customize .background {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    gap: 1rem;
+   
+}
+
+.container-customize .background>div {
+    display: grid;
+    /* align-items: center; */
+    /* padding: var(--card-paddind); */
+    width: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.container-customize .background>div span {
+  display: none;
+}
+   
 }

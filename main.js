@@ -95,7 +95,7 @@ fontSizes.forEach(size => {
 
 
         if (size.classList.contains('font-size1')) {
-            fontSize = "10px";
+            fontSize = "9px";
             root.style.setProperty('----sticky-top-left', '5.4rem');
             root.style.setProperty('----sticky-top-right', '5.4rem');
 
