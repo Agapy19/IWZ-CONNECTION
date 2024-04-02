@@ -752,6 +752,11 @@ main .container .container-rigth {
 }
 
 @media screen and (max-width: 700px) {
+    .container{
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
     main .container {
         display: grid;
         grid-template-columns: 0vw auto 4vw;
@@ -767,10 +772,6 @@ main .container .container-rigth {
         display: none;
     }
 
-    /* .container-timeline .feeds .feed {
-        padding: 0.5rem;
-        width: 60%;
-    } */
 
     main .container .container-left {
         grid-column: 3/4;
@@ -799,9 +800,7 @@ main .container .container-rigth {
         grid-column: 1/3;
     }
 
-    /* main .container .container-rigth {
-        display: none;
-    } */
+   
 
     .container-customize .customize-card {
         width: 92vw;
