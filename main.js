@@ -22,6 +22,12 @@ const publicationSearch = document.querySelector("#search-publication");
 const publication = document.querySelectorAll(".feed");
 
 
+
+// invitations
+const acceptButtons = document.querySelectorAll('.btn.btn-primary');
+const rejectButtons = document.querySelectorAll('.btn:not(.btn-primary)');
+
+
 const changeActiveMenu = () => {
     sideBarMenu.forEach(item => {
         item.classList.remove('active');
@@ -246,13 +252,13 @@ const search = () => {
 
 messageSeach.addEventListener('keyup', search);
 
-message.addEventListener('click', () => {
-    rigthMessages.style.boxShadow = '0 0 1rem var( --primary-color)';
-    messages.querySelector('.notification-count').style.display = 'none';
-    setTimeout(() => {
-        messages.style.boxShadow = 'none'
-    }, 2000);
-})
+// message.addEventListener('click', () => {
+//     rigthMessages.style.boxShadow = '0 0 1rem var( --primary-color)';
+//     messages.querySelector('.notification-count').style.display = 'none';
+//     setTimeout(() => {
+//         messages.style.boxShadow = 'none'
+//     }, 2000);
+// })
 // Publication
 const research = () => {
     const val = publicationSearch.value.toLowerCase();
@@ -267,6 +273,57 @@ const research = () => {
     })
 
 }
-publicationSearch.addEventListener('keyup', search);
+publicationSearch.addEventListener('keyup', research);
+
+// like
+
+let likeCount = 0;
+let isLiked = false;
+
+// Fonction pour incrémenter le compteur de likes et mettre à jour l'affichage
+function addLike() {
+    console.log("Like button clicked");
+    if (!isLiked) {
+        likeCount++;
+        console.log("Like added");
+        document.querySelector('#likeCount').textContent = likeCount;
+        document.querySelector('#likeIcon').classList.add('likee');
+        isLiked = true;
+    } else {
+        likeCount--;
+        console.log("Like removed");
+        document.getElementById('likeCount').textContent = likeCount;
+        document.getElementById('likeIcon').classList.remove('likee');
+        isLiked = false;
+    }
+}
+console.log("Adding event listener to like icon");
+document.getElementById('likeIcon').addEventListener('click', addLike);
+
+// Abonnement
+acceptButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const friendRequest = button.closest('.friend-request');
+        const requestInfo = friendRequest.querySelector('.request-info');
+        const friendName = requestInfo.querySelector('h5').textContent;
+        
+       
+        friendRequest.parentElement.removeChild(friendRequest);
+        
+        alert(`Vous avez accepté l'invitation de ${friendName}`);
+    });
+});
 
 
+rejectButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const friendRequest = button.closest('.friend-request');
+        const requestInfo = friendRequest.querySelector('.request-info');
+        const friendName = requestInfo.querySelector('h5').textContent;
+        
+       
+        friendRequest.parentElement.removeChild(friendRequest);
+        
+        alert(`Vous avez refusé l'invitation de ${friendName}`);
+    });
+});
