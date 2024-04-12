@@ -17,6 +17,9 @@ const theme1 = document.querySelector('.theme1');
 const theme2 = document.querySelector('.theme2');
 const theme3 = document.querySelector('.theme3');
 
+// publication
+const publicationSearch = document.querySelector("#search-publication");
+const publication = document.querySelectorAll(".feed");
 
 
 const changeActiveMenu = () => {
@@ -250,5 +253,20 @@ message.addEventListener('click', () => {
         messages.style.boxShadow = 'none'
     }, 2000);
 })
+// Publication
+const research = () => {
+    const val = publicationSearch.value.toLowerCase();
+    publication.forEach(user => {
+        let name = user.querySelector('h3').textContent.toLowerCase();
+        if(name.indexOf(val) != -1){
+            user.style.display = 'flex';
+        }
+        else{
+            user.style.display = "none"
+        }
+    })
+
+}
+publicationSearch.addEventListener('keyup', search);
 
 
