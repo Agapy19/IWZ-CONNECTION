@@ -338,7 +338,36 @@ main .container .container-left .container-left__profile {
 .container-timeline .stories .story:nth-child(6) {
     background: url('Images/dadjustory.png') no-repeat center center/cover;
 }
+body.show-story .container,
+body.show-story .header {
+    display: none;
+}
 
+body.show-story {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    margin-top: 50%;
+}
+
+
+.hide {
+    display: none !important;
+}
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
 .container-timeline .story .profile {
     width: 2rem;
     height: 2rem;

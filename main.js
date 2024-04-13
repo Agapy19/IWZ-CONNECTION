@@ -155,7 +155,6 @@ const deleteColorSelector = () => {
     })
 }
 
-// couleurs
 colors.forEach(color => {
     let primary;
     deleteColorSelector();
@@ -185,10 +184,8 @@ colors.forEach(color => {
 
         color.classList.add('active');
         document.querySelector('html').style.color = primary;
-
     });
 });
-
 // background
 let darkColorLight;
 let lightColorHue;
@@ -201,7 +198,7 @@ const changeTheme = () => {
 
 
 }
-theme1.addEventListener('click', () =>{
+theme1.addEventListener('click', () => {
 
 
     theme1.classList.add('active');
@@ -211,7 +208,7 @@ theme1.addEventListener('click', () =>{
 
 });
 
-theme2.addEventListener('click', () =>{
+theme2.addEventListener('click', () => {
     darkColorLight = '95%';
     whiteColorHue = '20%';
     lightColorHue = '15%';
@@ -223,7 +220,7 @@ theme2.addEventListener('click', () =>{
 
 });
 
-theme3.addEventListener('click', () =>{
+theme3.addEventListener('click', () => {
     darkColorLight = '95%';
     whiteColorHue = '10%';
     lightColorHue = '0%';
@@ -264,10 +261,10 @@ const research = () => {
     const val = publicationSearch.value.toLowerCase();
     publication.forEach(user => {
         let name = user.querySelector('h3').textContent.toLowerCase();
-        if(name.indexOf(val) != -1){
+        if (name.indexOf(val) != -1) {
             user.style.display = 'flex';
         }
-        else{
+        else {
             user.style.display = "none"
         }
     })
@@ -306,10 +303,10 @@ acceptButtons.forEach(button => {
         const friendRequest = button.closest('.friend-request');
         const requestInfo = friendRequest.querySelector('.request-info');
         const friendName = requestInfo.querySelector('h5').textContent;
-        
-       
+
+
         friendRequest.parentElement.removeChild(friendRequest);
-        
+
         alert(`Vous avez accepté l'invitation de ${friendName}`);
     });
 });
@@ -320,10 +317,63 @@ rejectButtons.forEach(button => {
         const friendRequest = button.closest('.friend-request');
         const requestInfo = friendRequest.querySelector('.request-info');
         const friendName = requestInfo.querySelector('h5').textContent;
-        
-       
+
+
         friendRequest.parentElement.removeChild(friendRequest);
-        
+
         alert(`Vous avez refusé l'invitation de ${friendName}`);
+    });
+});
+
+
+const stories = document.querySelectorAll('.story');
+const prevButton = document.querySelector('.prev-button');
+const nextButton = document.querySelector('.next-button');
+const profilePictureElement = document.querySelector('.person-info .profile-picture');
+
+
+let currentIndex = 0;
+
+// Fonction pour afficher la story spécifiée par son index
+function showStory(index) {
+    const offset = -index * 500; // Largeur d'une story (à adapter selon votre mise en page)
+    stories.forEach((story, i) => {
+        story.style.transform = `translateX(${offset + (i * 500)}px)`;
+    });
+}
+
+// Écouter le clic sur le bouton précédent
+prevButton.addEventListener('click', () => {
+    currentIndex = Math.max(currentIndex - 1, 0);
+    showStory(currentIndex);
+});
+
+// Écouter le clic sur le bouton suivant
+nextButton.addEventListener('click', () => {
+    currentIndex = Math.min(currentIndex + 1, stories.length - 1);
+    showStory(currentIndex);
+});
+
+stories.forEach(story => {
+    story.addEventListener('click', () => {
+        // Récupérer l'URL de l'image de la story
+        const imageURL = story.getAttribute('data-image');
+
+        // Définir l'image de la story comme arrière-plan du corps
+        document.body.style.backgroundImage = `url('${imageURL}')`;
+
+        // Ajouter une classe pour indiquer que seule l'image de la story est visible
+        document.body.classList.add('show-story');
+
+        // Masquer tous les autres éléments
+        // const elementsToHide = document.querySelectorAll('.container-timeline');
+        // elementsToHide.forEach(element => {
+        //     element.style.display = 'none';
+        // });
+        
+
+        // Ajuster la taille de la story
+        story.style.width = '50px';
+        story.style.height = '50px';
     });
 });
