@@ -366,10 +366,10 @@ stories.forEach(story => {
         document.body.classList.add('show-story');
 
         // Masquer tous les autres éléments
-        // const elementsToHide = document.querySelectorAll('.container-timeline');
-        // elementsToHide.forEach(element => {
-        //     element.style.display = 'none';
-        // });
+        const elementsToHide = document.querySelectorAll('.container-timeline');
+        elementsToHide.forEach(element => {
+            element.style.display = 'none';
+        });
         
 
         // Ajuster la taille de la story
