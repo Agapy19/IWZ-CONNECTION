@@ -325,10 +325,8 @@ rejectButtons.forEach(button => {
     });
 });
 
-
+// story
 const stories = document.querySelectorAll('.story');
-const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
 const profilePictureElement = document.querySelector('.person-info .profile-picture');
 
 
@@ -342,17 +340,9 @@ function showStory(index) {
     });
 }
 
-// Écouter le clic sur le bouton précédent
-prevButton.addEventListener('click', () => {
-    currentIndex = Math.max(currentIndex - 1, 0);
-    showStory(currentIndex);
-});
 
-// Écouter le clic sur le bouton suivant
-nextButton.addEventListener('click', () => {
-    currentIndex = Math.min(currentIndex + 1, stories.length - 1);
-    showStory(currentIndex);
-});
+
+
 
 stories.forEach(story => {
     story.addEventListener('click', () => {
